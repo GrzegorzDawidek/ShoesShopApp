@@ -13,10 +13,6 @@ import webapplication.ShoesShopApp.service.attribute.AttributeServiceImpl;
 import webapplication.ShoesShopApp.service.category.CategoryServiceImpl;
 import webapplication.ShoesShopApp.service.product.ProductServiceImpl;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-
 @Controller
 public class ProductsController {
 
