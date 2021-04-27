@@ -2,7 +2,6 @@ package webapplication.ShoesShopApp.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -49,6 +48,8 @@ public class Role {
     public String getName() {
         return name;
     }
+
+
 
    /* public void addUser(User user){
         this.users.add(user);

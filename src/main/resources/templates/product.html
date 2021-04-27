@@ -2,19 +2,19 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style_2.css}" />
     <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
     <title>Products</title>
 </head>
 <body>
 <main>
-    <div th:include="heading"></div>
+    <div th:include="navbar"></div>
 
 
     <div class="card w-60">
         <div class = "shadow-lg p-3 mb-5 bg-white rounded">
 
-            <div class="card-body">
+            <div class="card-body" >
                 <h5 class="card-title">Add Product</h5>
                 <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="post">
                     <div th:object="${category}">
@@ -87,8 +87,6 @@
             </div>
         </div>
     </div>
-
-    <div th:include="footer"></div>
     </div>
 </main>
 </body>

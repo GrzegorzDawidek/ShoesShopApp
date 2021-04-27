@@ -70,33 +70,21 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+
     @Transactional
     public void changeUserStatus(long id, EditUserStatusDto editUserStatusDto) {//shift f6
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             user.setBlocked(editUserStatusDto.isBlocked());
-            Role role = roleRepository.findById(id);
-            user.removeRole(role);
-            user.addRole(role);
-            user.setRoles(user.getRoles());
-            //  user.addRole(role);
 
+
+            Role role = roleRepository.findById(id);
+            user.addRole(role);
+            role.setName(editUserStatusDto.getRole());
         }
 
-        //przekazanie usera (email) z thymeleaf
-        //zaaktualizowanie pola block
-        //zapis
-
-        //tak samo dla roli
     }
-
-   /* public void changeUserRole(long id, User user){
-        Role role = roleRepository.findById(id);
-        role.removeUser(user);
-        role.addUser(user);
-    }*/
-
 
     public User getUserById(Long id) {
         return userRepository.findById(id).get();

@@ -14,6 +14,18 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
     Role findByName(String name);
 
 
+    /*Role findById(long id);
+
+    @Query("select distinct r.roleName from Role r " +
+            " where r.roleName = ?1")
+    Role findByRoleName(String name);
+
+*/
+
     Role findById(long id);
+
+
+
+
 
 }

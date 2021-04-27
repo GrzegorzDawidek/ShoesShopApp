@@ -36,3 +36,39 @@ input[type=checkbox]:checked:before {
     color:black;
 }
 
+
+
+.pos-center .table {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-style: solid;
+}
+
+.container .center{
+text-align: center;
+}
+
+/* card */
+.card {
+    width: 21.5em;
+    margin:0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.form-group {
+    position: relative;
+    font-family: Arial, serif;
+}
+.card .btn-primary{
+    margin-top: 10px;
+    margin-left: 80px;
+    width: 40%;
+}
+.card select, input {
+    margin-bottom: 10px;
+}
+.card label {
+    font-weight: bold;
+}

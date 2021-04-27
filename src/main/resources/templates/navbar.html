@@ -21,32 +21,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">Shoes Shop</a>
+                <a class="navbar-brand" href="/">Shoes Shop</a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Men</a>
+                            <a class="nav-link" href="/men">Men</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Woman</a>
+                            <a class="nav-link" href="/woman">Woman</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kids</a>
+                            <a class="nav-link" href="/kids">Kids</a>
                         </li>
 
-                        <li sec:authorize = "isAuthenticated()" class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">User Panel</a>
+                        <li sec:authorize="hasRole('USER')" class="nav-item">
+                            <a class="nav-link" href="/userPanel" tabindex="-1">User Panel</a>
                         </li>
 
                         <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin Panel</a>
+                            <a class="nav-link" href="/privileges" tabindex="-1">Admin Panel</a>
                         </li>
 
                         <li sec:authorize="hasRole('DATAADMIN')" class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Data-Admin Panel</a>
+                            <a class="nav-link" href="/product" tabindex="-1" >Data-Admin Panel</a>
                         </li>
 
                     </ul>

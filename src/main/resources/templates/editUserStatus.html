@@ -3,21 +3,18 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Privileges</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style_2.css}"/>
 </head>
 <body>
 <main>
+    <div th:include="navbar"></div>
     <div class="pos-center">
+
+
         <form action="#" th:action="@{'/changeUserStatus/'} + ${user.id}" th:object="${user}" method="get">
-        <style type="text/css">
-            .table {
-                margin: 0 auto;
-                width: 50%;
-                margin-top: 30px;
-                margin-bottom: 30px;
-            }
-        </style>
-        <div th:include="heading"></div>
+
+
+
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -36,8 +33,8 @@
                 <td th:text="${user.email}">Email</td>
                 <td>
                     <select th:field="*{blocked}">
-                        <option th:value="'True'" th:text="${user.blocked}"></option>
-                        <option th:value="'False'" th:text="${!user.blocked}"></option>
+                        <option th:value="'True'" th:text="True"></option>
+                        <option th:value="'False'" th:text="False"></option>
                     </select>
                 </td>
                 <td>
@@ -57,7 +54,6 @@
             </div>
         </div>
         </form>
-        <div th:include="footer"></div>
 
     </div>
 </main>
