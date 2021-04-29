@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import webapplication.ShoesShopApp.model.Role;
 import webapplication.ShoesShopApp.repository.RoleRepository;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class RoleServiceImpl {
@@ -14,4 +16,8 @@ public class RoleServiceImpl {
     private RoleRepository roleRepository;
 
     public void save(Role role) {roleRepository.save(role);}
+
+    public List<Role> getAllRoles() {
+        return roleRepository.findAll();
+    }
 }

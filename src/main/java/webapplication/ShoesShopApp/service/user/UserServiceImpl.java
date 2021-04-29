@@ -80,8 +80,9 @@ public class UserServiceImpl implements UserService {
 
 
             Role role = roleRepository.findById(id);
-            user.addRole(role);
-            role.setName(editUserStatusDto.getRole());
+            user.setRoles(editUserStatusDto.getRoles());
+//            user.addRole(role);
+//            role.setName(editUserStatusDto.getRole());
         }
 
     }
