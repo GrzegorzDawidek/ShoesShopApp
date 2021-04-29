@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import webapplication.ShoesShopApp.model.Product;
+import webapplication.ShoesShopApp.model.Role;
 import webapplication.ShoesShopApp.model.User;
 import webapplication.ShoesShopApp.model.dto.EditUserStatusDto;
 import webapplication.ShoesShopApp.service.product.ProductServiceImpl;
@@ -34,7 +36,9 @@ public class MainController {
     }
 
     @GetMapping("/")
-    public String home(){
+    public String home(Model model){
+        List<Product> productList = productService.listAll();
+        model.addAttribute(productList);
         return "home";
     }
 
@@ -101,10 +105,12 @@ public class MainController {
     }
 
     @GetMapping("/editUserStatus/{id}")
-    public ModelAndView editUserStatus(@PathVariable(name = "id") Long id){
+    public ModelAndView editUserStatus(@PathVariable(name = "id") Long id, Model model){
         ModelAndView modelAndView = new ModelAndView("editUserStatus");
         User user = userServiceImpl.getUserById(id);
+        List<Role> roles = roleService.getAllRoles();
         modelAndView.addObject("user",user);
+        model.addAttribute("roles", roles);
         return modelAndView;
     }
 

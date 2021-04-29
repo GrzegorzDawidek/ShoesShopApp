@@ -72,7 +72,7 @@ public class Role {
             return "USER";
         else if(name.equals("ROLE_ADMIN"))
             return "ADMIN";
-        return "DATAADMIN";
+        return "DATA-ADMIN";
     }
 
 

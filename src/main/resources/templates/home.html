@@ -24,7 +24,7 @@
         <nav aria-label="breadcrumb" style="margin: 20px;">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Men</li>
+                <li class="breadcrumb-item active" aria-current="page"></li>
             </ol>
         </nav>
         <!-----------------End--------------------->
@@ -199,16 +199,19 @@
 
 
 
-        <!------------------------------------------- SHOE CARD------------------------------------------------------
+        <!------------------------------------------- SHOE CARD------------------------------------------------------>
+<section class="products" style="display: flex; flex-wrap: wrap;">
+    <article th:each="product : ${productList}" >
+        <div class="card" style="width: 15rem; margin: 30px; font-size:smaller;">
 
-        <div class="card" style="width: 12rem; margin: 30px; font-size:smaller;">
-
+            <!-------Carousel--------->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="/img/but.jpg" class="d-block w-100" alt="...">
@@ -230,9 +233,10 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!-------End carousel-------->
 
             <div class="card-body">
-                <h6 class="card-title" style="font-size:small;"> Nazwa obuwia </h6>
+                <h6 th:text="${product.productName}" class="card-title" style="font-size:small;">Nazwa obuwia</h6>
                 <p class="card-text">Opis</p>
                 <hr>
                 <p class="card-price">192$</p>
@@ -263,7 +267,9 @@
 
             </div>
         </div>
-        ------------------------------------------ END CARD------------------------------------------------------------>
+    </article>
+</section>
+       <!------------------------------------------ END CARD------------------------------------------------------------>
 
 
 

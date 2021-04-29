@@ -6,6 +6,7 @@ import webapplication.ShoesShopApp.model.Product;
 import webapplication.ShoesShopApp.repository.ProductRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -23,6 +24,10 @@ public class ProductServiceImpl{
 
     public void save(Product product) {
         productRepository.save(product);
+    }
+
+    public List<Product> listAll(){
+        return productRepository.findAll();
     }
 
 }

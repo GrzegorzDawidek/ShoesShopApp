@@ -50,7 +50,7 @@ input[type=checkbox]:checked:before {
 text-align: center;
 }
 
-/* card */
+/* card in Home page */
 .card {
     width: 21.5em;
     margin:0 auto;
@@ -72,3 +72,31 @@ text-align: center;
 .card label {
     font-weight: bold;
 }
+/* end card*/
+
+
+
+
+/* table in editUserStatus */
+.table-bordered span{
+    color: green;
+    font:caption;
+    font-weight: bold;
+}
+
+.table-bordered span:hover{
+    color: wheat;
+}
+
+/* end table */
+
+
+
+
+/* section products */
+section.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
