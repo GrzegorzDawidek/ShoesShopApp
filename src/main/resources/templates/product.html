@@ -22,7 +22,7 @@
                     <div>
                         <label for="productNameInput">Name</label>
                     </div>
-                    <input type="text" class="form-control"  th:object="${product}" th:field="*{productName}" id="productNameInput" aria-describedby="emailHelp">
+                    <input type="text" class="form-control"  required autofocus="autofocus"  th:object="${product}" th:field="*{productName}" id="productNameInput" aria-describedby="emailHelp">
                     <div class="select">
                         <label for="exampleFormControlSelect1">Amount</label>
                         <select class="form-control" th:object="${product}" th:field="*{amount}" data-live-search="true" id="exampleFormControlSelect1">

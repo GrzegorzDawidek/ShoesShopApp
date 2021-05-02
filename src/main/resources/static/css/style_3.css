@@ -1,0 +1,27 @@
+.card {
+    width: 40rem;;
+    margin:0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.form-group {
+    position: relative;
+    font-family: Arial, serif;
+}
+.card .btn-primary{
+    margin-top: 30px;
+    width: 15%;
+}
+.buttondiv {
+    text-align: center;
+}
+.card input {
+    margin-bottom: 10px;
+}
+.card .block label {
+    font-weight: bold;
+    text-align: center;
+}
+.card h5 {
+    text-align: center;
+}

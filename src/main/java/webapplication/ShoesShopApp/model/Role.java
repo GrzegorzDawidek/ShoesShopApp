@@ -11,7 +11,8 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    @Column(name = "role_name")
+    private String roleName;
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users = new HashSet<>();
@@ -20,9 +21,9 @@ public class Role {
 
     }
 
-    public Role(String name) {
+    public Role(String roleName) {
         super();
-        this.name = name;
+        this.roleName = roleName;
     }
 
     public Long getId() {
@@ -33,8 +34,8 @@ public class Role {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public Set<User> getUser() {
@@ -45,8 +46,8 @@ public class Role {
         this.users = users;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
 
 
@@ -68,9 +69,9 @@ public class Role {
     }
 
     private String returnNameOfRole() {
-        if(name.equals("ROLE_USER"))
+        if(roleName.equals("ROLE_USER"))
             return "USER";
-        else if(name.equals("ROLE_ADMIN"))
+        else if(roleName.equals("ROLE_ADMIN"))
             return "ADMIN";
         return "DATA-ADMIN";
     }

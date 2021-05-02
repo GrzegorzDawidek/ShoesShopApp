@@ -44,6 +44,7 @@ input[type=checkbox]:checked:before {
     margin-top: 30px;
     margin-bottom: 30px;
     border-style: solid;
+    text-align: center;
 }
 
 .container .center{
@@ -64,7 +65,7 @@ text-align: center;
 .card .btn-primary{
     margin-top: 10px;
     margin-left: 80px;
-    width: 40%;
+    width: 45%;
 }
 .card select, input {
     margin-bottom: 10px;
