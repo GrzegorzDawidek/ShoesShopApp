@@ -24,23 +24,18 @@ import java.util.List;
 @Controller
 public class MainController {
     private UserServiceImpl userServiceImpl;
-    private ProductServiceImpl productService;
-    private RoleServiceImpl roleService;
+    private ProductServiceImpl productServiceImpl;
+    private RoleServiceImpl roleServiceImpl;
 
     private static Logger logger = LogManager.getLogger(MainController.class);
 
     public MainController(UserServiceImpl userServiceImpl, ProductServiceImpl productService, RoleServiceImpl roleService) {
         this.userServiceImpl = userServiceImpl;
-        this.productService = productService;
-        this.roleService = roleService;
+        this.productServiceImpl = productService;
+        this.roleServiceImpl = roleService;
     }
 
-    @GetMapping("/")
-    public String home(Model model){
-        List<Product> productList = productService.listAll();
-        model.addAttribute(productList);
-        return "home";
-    }
+
 
     @RequestMapping("/login")
     public String login (){
@@ -108,10 +103,17 @@ public class MainController {
     public ModelAndView editUserStatus(@PathVariable(name = "id") Long id, Model model){
         ModelAndView modelAndView = new ModelAndView("editUserStatus");
         User user = userServiceImpl.getUserById(id);
-        List<Role> roles = roleService.getAllRoles();
+        List<Role> roles = roleServiceImpl.getAllRoles();
         modelAndView.addObject("user",user);
         model.addAttribute("roles", roles);
         return modelAndView;
+    }
+
+    @GetMapping("/")
+    public String home(Model model){
+        List<Product> productList = productServiceImpl.listAll();
+        model.addAttribute(productList);
+        return "home";
     }
 
 }

@@ -8,7 +8,7 @@ import webapplication.ShoesShopApp.repository.CategoryRepository;
 
 @Service
 @Transactional
-public class CategoryServiceImpl {
+public class CategoryServiceImpl implements CategoryService{
 
     @Autowired
     private CategoryRepository categoryRepository;

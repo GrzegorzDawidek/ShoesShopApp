@@ -89,6 +89,6 @@ public class Product {
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", amount=" + amount +
-                '}';
+                ", category=" + category.toString() + '}';
     }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="@{/css/style_2.css}" rel="stylesheet" type="text/css">
 
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
@@ -201,7 +202,7 @@
 
         <!------------------------------------------- SHOE CARD------------------------------------------------------>
 <section class="products" style="display: flex; flex-wrap: wrap;">
-    <article th:each="product : ${productList}" >
+    <article th:each="product : ${productList}"  >
         <div class="card" style="width: 15rem; margin: 30px; font-size:smaller;">
 
             <!-------Carousel--------->
@@ -236,10 +237,18 @@
             <!-------End carousel-------->
 
             <div class="card-body">
-                <h6 th:text="${product.productName}" class="card-title" style="font-size:small;">Nazwa obuwia</h6>
-                <p class="card-text">Opis</p>
+                <h6 th:text="${product.productName}" class="card-title" style="font-size:small;"></h6>
+                <p th:text="${product.category.categoryName}" class="card-text"></p>
+
+                <p th:text="${product.attribute.attributeName}" class="card-text"></p>
+
                 <hr>
+                <div th:each="attribute: ${product.attributes}" >
+                 <p th:text="${attributeName}" class="card-text">Kolory</p>
+                 <p th:text="${value}" class="card-text">Rozmiar</p>
+                </div>
                 <p class="card-price">192$</p>
+
                 <a href="#" class="btn btn-primary stretched-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Go somewhere</a>
 
 
